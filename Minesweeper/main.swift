@@ -142,6 +142,7 @@ final class Minesweeper {
     
     func startGame() {
         board.startBoard()
+        board.printBoard()
     }
     
     func reveal(x: Int, y: Int) {
@@ -180,8 +181,12 @@ let game = Minesweeper()
 game.startGame()
 
 while game.gameIsValid() {
-    if let inputX = readLine(), let inputY = readLine(), let intX = Int(inputX), let intY = Int(inputY) {
-        game.reveal(x: intX, y: intY)
+    print("Type the x coordinate: ")
+    if let inputX = readLine(), let intX = Int(inputX) {
+        print("Type the y coordinate: ")
+        if let inputY = readLine(), let intY = Int(inputY) {
+            game.reveal(x: intX, y: intY)
+        }
     }
 }
 
