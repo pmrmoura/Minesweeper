@@ -107,7 +107,7 @@ final class Board {
     func reveal(x: Int, y: Int) -> GameState {
         guard x >= 0 && x < row && y >= 0 && y < column else { return .error }
         
-        var position = board[x][y]
+        let position = board[x][y]
         
         guard position > -1 else { return .lose }
         
